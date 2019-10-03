@@ -1,6 +1,10 @@
+
+
 .App {
   text-align: center;
   font-size: 5rem;
+  max-width: 100%;
+  
 }
 
 .App-logo {

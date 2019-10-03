@@ -7,9 +7,17 @@ const Display = (props) => {
         <span> 
           Balls
         </span>
-       {props.strikes}
+        {props.strikes}
         <span>
           Strikes
+        </span>
+        {props.outs}
+        <span>
+          Outs
+        </span>
+        {props.inning}
+        <span>
+          Inning
         </span>
       </div>
     )

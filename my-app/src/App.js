@@ -32,9 +32,29 @@ export const reset = value => {
   return value = 0
 }
 
+export const addInning = (outs, inning) => {
+  if(outs === 2) {
+    return inning += 1
+  } else {
+      return inning
+    }
+  }
+
+export const addOuts = (strikes, outs) => {
+  if(strikes === 2 && outs < 2) {
+    return outs + 1
+  } else if(outs >= 2) {
+    return outs - outs
+  } else {
+    return outs
+  }
+}
+
 function App(props) {
   const [balls, setBalls] = useState(0)
   const [strikes, setStrikes] = useState(0)
+  const [inning, setInning] = useState(1)
+  const [outs, setOuts] = useState(0)
 
   console.log(balls)
 
@@ -69,8 +89,8 @@ function App(props) {
 
   return (
     <div className="App">
-      <Display balls={balls} strikes={strikes}/>
-      <Dashboard addBalls={addBalls} addStrikes={addStrikes} setStrikes={setStrikes} setBalls={setBalls} balls={balls} strikes={strikes} foulBall={foulBall} reset={reset}/>
+      <Display balls={balls} strikes={strikes} inning={inning} outs={outs}/>
+      <Dashboard addBalls={addBalls} addStrikes={addStrikes} setStrikes={setStrikes} setBalls={setBalls} balls={balls} strikes={strikes} foulBall={foulBall} reset={reset} addInning={addInning} inning={inning} setInning={setInning} outs={outs} setOuts={setOuts} addOuts={addOuts}/>
       
     </div>
   );
